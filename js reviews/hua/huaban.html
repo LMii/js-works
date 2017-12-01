@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>huaban</title>
+	<link rel="stylesheet" href="huaban.css">	
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script src='js/huaban.js'></script>
+	<script src='js/index.js'></script>
+</head>
+<body>
+	<div class='top'>
+	    <ul class='neng'>
+	      <li><button class='newfile'>新建</button></li>
+	      <li><a href="" class='save'><button>保存</button></a></li>
+	      <li><button class='chexiao'>撤销</button></li> 
+	      <li><button class='clearAll'>清空</button></li> 
+	      <li><button class='reserve'>反向</button></li>     	
+	    </ul>
+		<ul class='tools'>
+		   <ul class='tools1'>
+				<li class="line"><i class='iconfont icon-xiantiao-xiexian1'></i></li>
+				<li class="dash"><i class='iconfont icon-xuxian'></i></li>
+				<li class="pencil"><i class='iconfont icon-tubiao'></i></li>
+				<li class="ju"><i class='iconfont icon-juxing'></i></li>
+				<li class="round"><i class='iconfont icon-yuan'></i></li>
+				<li class="poly"><i class='iconfont icon-duobianxing'></i></li>
+				<li class="polyJ"><i class='iconfont icon-wujiaoxing'></i></li>	
+			</ul>
+			<ul class='tools2'>
+				<li class='eraser'><i class='iconfont icon-xiangpica'></i></li>
+				<li class='text'><i class='iconfont icon-wenzi'></i></li>
+				<li class='clip'><i class='iconfont icon-caijian'></i></li>	
+			</ul>	
+		</ul>
+		<ul class='color'>
+			<li class='stroke'><i class='iconfont icon-miaobian'></i></li>
+			<input type="color">
+			<li class='fill'><i class='iconfont icon-tianchong'></i></li>
+		</ul>
+	</div>
+	<div class='bottom'>
+	  <canvas width="1349px" height="455"></canvas>
+	  <div class='clip-box'></div>	  
+	  <div class='eraser-box'></div>
+	  <div class="opacity"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/*
+* @Author: acer
+* @Date:   2017-09-28 14:36:43
+* @Last Modified by:   acer
+* @Last Modified time: 2017-10-20 08:45:06
+*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: 'sans-serif'
+}
+body,html{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #1B223C;
+	background:url(../img/bg10.png) no-repeat center/cover;
+	position: relative;
+}
+/* .start{
+	width: 100%;
+	height: 100%;
+	background:rgba(0,0,0,0.5);
+	opacity: 1;
+} */
+.char{
+	width: 83px;
+	height: 97px;
+	background:rgba(33,127,45,0.75);
+	/* border-radius: 50%; */
+	color: #000;
+	text-align: center;
+	line-height: 60px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.score,.life{
+	width: 100px;
+	height: 50px;
+	background: #000;
+	border-radius: 5px;
+	color: #fff;
+	/* margin: 20px 10px; */
+	line-height: 50px;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+body>.life{
+	left: 200px;
+}
+/* font:italic bold 20px/1.5 '微软雅黑'; */

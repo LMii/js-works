@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>game</title>
+    <script src='js/code.js'></script>
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+   
+	<div class='score'>分数:<span>0</span></div>
+	<div class='life'>生命:<span>10</span></div>
+</body>
+</html>
+<script>
+window.onload=function(){
+    let char=new Game();
+	char.start();
+	/*let button=document.querySelector('button');
+	button.onclick=function(){
+		let butt=window.confirm('确定要重新开始吗?');
+	    if(butt==true){
+	    	char.restar();
+	    }
+	}*/
+	console.log(innerWidth)
+	console.log(innerHeight)
+}
+</script>

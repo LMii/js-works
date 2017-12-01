@@ -1,0 +1,248 @@
+/*
+* @Author: acer
+* @Date:   2017-10-22 21:05:11
+* @Last Modified by:   acer
+* @Last Modified time: 2017-10-25 00:09:38
+*/
+@import url('base.css');
+/* 头部开始 */
+header{
+	width: 100%;
+	height:96px;
+}
+.nav-active{
+	position:fixed;
+	top:-96px;
+	left:0;
+	background:#fff;
+	z-index:100;
+	border-bottom:1px solid #108e64;
+	box-sizing: border-box;
+	transition: all 0.4s;
+}
+.logo{
+	width: 200px;
+	/* height: 100%; */
+	float: left;
+	margin-top:10px;
+	margin-left: 150px;
+}
+.logo>p{
+	font-size: 14px;
+	margin-left: -20px;
+	color: #444444;
+}
+.head-main{
+	width: 770px;
+	height: 100%;
+	float: right;
+	/* margin: 0 226px; */
+}
+.head-main li{
+	width: 101px;
+	height: 43px;
+	float: left;
+	margin-right: 16px;
+}
+.head-main li:last-child{
+	margin-right: 0;
+}
+.head-main li:nth-of-type(4) a{
+	color: #108e64;
+}
+.head-main li a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	font-size: 14px;
+	color: #444444;
+	line-height: 43px;
+	text-align: center;
+	margin-top: 30px;
+	position: relative;
+}
+.head-main>li>a:hover{
+	background: #108e64;
+	color: #108e64;
+}
+.head-main>li>a:hover>span{
+	color: #fff;
+	bottom: 0;
+}
+.head-main>li>a>span{
+	color: #fff;
+	font-size: 14px;
+	font-style: normal;
+	position: absolute;
+	bottom: -43px;
+	left:20px;
+	display: block;
+	transition: all 0.4s;
+	padding: 5px 10px;
+}
+/* 头部结束 */
+/* banner开始 */
+main{
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+main>a{
+    width: 100%;
+    height: 580px;
+    display: block;
+
+}
+main>a>img{
+	width: 100%;
+	height:100%;
+	display: block;
+}
+.zhe{
+	width: 100%;
+	height: 580px;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.zi1{
+	height: 135px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -80px;
+	margin-left: -200px;
+}
+.zi1>p{
+	font-size: 60px;
+	float: left;
+	color: #fff;
+    line-height: 135px;
+}
+.zi1>p:first-child{
+   color:#108e64;
+   margin-right: 60px;
+}
+/* banner结束 */
+/* 大盒子开始 */
+.big-box{
+	width: 1200px;
+	height: auto;
+	background: #fff;
+	margin: 0 auto;
+	box-shadow: 1px 19px 30px rgba(0,0,0,0.3);
+	padding: 50px;
+	box-sizing: border-box;
+}
+
+.tishi{
+	width: 100%;
+	height:40px;
+	margin: 0 auto 20px auto;
+}
+.icon-location_fill{
+	float: left;
+}
+.tishi>p,.tishi>a{
+	font-size: 14px;
+	line-height:40px;
+	color: #000;
+	float: left;
+}
+.tishi>a:hover{
+    text-decoration: underline;
+}
+.tishi>p:nth-of-type(2){
+	font-size: 12px;
+}
+.top-zi{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding-bottom: 30px;
+}
+.top-zi>p{
+	font-size: 26px;
+}
+.top-zi>p:nth-child(2){
+	font-size: 20px;
+}
+/* 详情主要内容开始 */
+.team-xqmain{
+	width: 100%;
+	height: auto;
+}
+.teamx-pic{
+	width: 680px;
+	height: 400px;
+	margin: 0 auto;
+}
+.teamx-pic>li{
+	width: 100%;
+    height: 100%;
+}
+.jianjie{
+	width: 100%;
+	height: auto;
+	padding-top: 30px;
+}
+.jianjie-top{
+	width: 100%;
+	height: 35px;
+	border-left: 5px solid #108e64;
+	font-size: 28px;
+	padding-left: 10px;
+}
+.jianjie>p{
+	font-size: 14px;
+	margin-top: 20px;
+}
+/* 详情主要内容结束 */
+/* 分享开始 */
+.share{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding: 5px 0;
+	margin:20px auto 0;
+	background: #414b55;
+	box-sizing: border-box;
+}
+.share-mian{
+	width: 20%;
+	height: 100%;
+	margin: 0 auto;
+}
+.share-mian>p{
+	font-size: 14px;
+	float: left;
+	line-height: 23px;
+	margin-right: 10px;
+	color: #fff;
+}
+.share-mian>div{
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #5AC7F9;
+	float: left;
+	margin-right: 10px;
+}
+.share-mian>div:nth-of-type(2){
+	background: #49D5B2;
+}
+.share-mian>div:nth-of-type(3){
+	background: #FF5549;
+}
+.share-mian>div:hover{
+	background: #7BD2FA;
+}
+.share-mian>div:nth-of-type(2):hover{
+	background: #6DDDC1;
+}
+.share-mian>div:nth-of-type(3):hover{
+	background: #FF776D;
+}
+/* 分享结束 */
+/* 大盒子结束 */

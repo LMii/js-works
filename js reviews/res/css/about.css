@@ -1,0 +1,324 @@
+/*
+* @Author: acer
+* @Date:   2017-10-20 16:13:44
+* @Last Modified by:   acer
+* @Last Modified time: 2017-10-22 17:53:43
+*/
+@import url('base.css');
+/* 头部开始 */
+header{
+	width: 100%;
+	height:96px;
+}
+.nav-active{
+	position:fixed;
+	top:-96px;
+	left:0;
+	background:#fff;
+	z-index:100;
+	border-bottom:1px solid #108e64;
+	box-sizing: border-box;
+	transition: all 0.4s;
+}
+.logo{
+	width: 200px;
+	/* height: 100%; */
+	float: left;
+	margin-top:10px;
+	margin-left: 150px;
+}
+.logo>p{
+	font-size: 14px;
+	margin-left: -20px;
+	color: #444444;
+}
+.head-main{
+	width: 770px;
+	height: 100%;
+	float: right;
+	/* margin: 0 226px; */
+}
+.head-main li{
+	width: 101px;
+	height: 43px;
+	float: left;
+	margin-right: 16px;
+}
+.head-main li:last-child{
+	margin-right: 0;
+}
+.head-main li:nth-of-type(6) a{
+	color: #108e64;
+}
+.head-main li a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	font-size: 14px;
+	color: #444444;
+	line-height: 43px;
+	text-align: center;
+	margin-top: 30px;
+	position: relative;
+}
+.head-main>li>a:hover{
+	background: #108e64;
+	color: #108e64;
+}
+.head-main>li>a:hover>span{
+	color: #fff;
+	bottom: 0;
+}
+.head-main>li>a>span{
+	color: #fff;
+	font-size: 14px;
+	font-style: normal;
+	position: absolute;
+	bottom: -43px;
+	left:20px;
+	display: block;
+	transition: all 0.4s;
+	padding: 5px 10px;
+}/* 头部结束 */
+/* banner开始 */
+main{
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+main>a{
+    width: 100%;
+    height: 580px;
+    display: block;
+
+}
+main>a>img{
+	width: 100%;
+	height:100%;
+	display: block;
+}
+.zhe{
+	width: 100%;
+	height: 580px;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.zi1{
+	height: 135px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -80px;
+	margin-left: -200px;
+}
+.zi1>p{
+	font-size: 60px;
+	float: left;
+	color: #fff;
+    line-height: 135px;
+}
+.zi1>p:first-child{
+   color:#108e64;
+   margin-right: 60px;
+}
+/* banner结束 */
+/* 大盒子开始 */
+.big-box{
+	width: 1200px;
+	height: auto;
+	background: #fff;
+	margin: 0 auto;
+	box-shadow: 1px 19px 30px rgba(0,0,0,0.3);
+	padding: 30px 50px;
+	box-sizing: border-box;
+}
+.tishi{
+	width: 100%;
+	height:40px;
+	margin: 0 auto 20px auto;
+}
+.icon-location_fill{
+	float: left;
+}
+.tishi>p,.tishi>a{
+	font-size: 14px;
+	line-height:40px;
+	color: #000;
+	float: left;
+}
+.tishi>a:hover{
+    text-decoration: underline;
+}
+.tishi>p:nth-of-type(2){
+	font-size: 12px;
+}
+/* 联系我们开始 */
+.contact{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.contact-top{
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+.contact-top>p{
+	font-size: 20px;
+	text-align: center;
+}
+.contact-top>p:nth-child(2){
+	font-size: 12px;
+}
+.contact-bottom{
+	width: 100%;
+	height: auto;
+}
+.contact-bottom>li{
+	width: 524px;
+	height:166px;
+	background: #fff;
+	float: left;
+	margin-right: 50px;
+	margin-bottom: 30px;
+	box-shadow: 0 0 20px -5px rgba(0,0,0,0.5);
+	padding: 20px;
+	box-sizing: border-box;
+}
+.contact-bottom>li:nth-child(2n){
+	margin-right: 0;
+}
+.contact-bottom>li>p{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.contact-bottom>li>p:nth-of-type(1)~p{
+	font-size: 14px;
+	color: #ACACAC;
+}
+.message{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin: 30px 0;
+}
+.message-bottom>input{
+	width: 350px;
+	height: 50px;
+	border: 0;
+	border-bottom: 1px solid #000;
+	outline: none;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 0 8px;
+	font-size: 16px;
+}
+.message-bottom>input:last-of-type{
+	margin-right: 0;
+}
+textarea{
+	width: 100%;
+	height: 150px;
+	border: 0;
+	outline: none;
+	font-size: 16px;
+	border-bottom: 1px solid #000;
+	padding: 0 8px;
+	resize: none;
+	margin-bottom: 20px;
+}
+button{
+	width: 100%;
+	height: 40px;
+	background: #000;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	border: 0;
+}
+/* 联系我们结束 */
+/* 大盒子结束 */
+/* 关于我们开始 */
+.about-box{
+	width: 100%;
+	height: 200px;
+	background: #414b55;
+	margin-top: 50px;
+	overflow: hidden;
+}
+.about-main{
+	width: 1000px;
+	height: 100%;
+	margin: 50px auto;
+}
+.about-main>div{
+	width: 300px;
+	height: 100%;
+	float: left;
+}
+.about-left>p{
+	font-size: 18px;
+	color: #108e64;
+}
+.about-center>p,.about-right>p{
+	font-size: 18px;
+	color: #979faa;
+}
+.about-center>a{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	float: left;
+	padding-top: 2px;
+	/* background: #fff; */
+	margin-right: 20px;
+	margin-top: 20px;
+}
+/* .about-center>a:first-of-type{
+	background: #108e64;
+} */
+.about-right>p:nth-child(1)~p{
+	font-size: 12px;
+	line-height: 30px;
+
+}
+/* 关于我们结束 */
+/*关于我们遮罩开始*/
+.about-zhe{
+	width: 260px;
+	height: 260px;
+	margin-top:-368px;
+	margin-left:480px;
+	background: #fff;
+	position:relative;
+	z-index:666;
+	overflow: hidden;
+	opacity: 0;
+}
+.about-zhe>img{
+	width: 230px;
+	height: 230px;
+	margin:15px;
+	margin-top:15px;
+	transform:scale(0,0);
+	transition: all 0.4s;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.about-zhe>div{
+	position:absolute;
+	top:0px;
+	right:0;
+	width: 25px;
+	height: 25px;
+	background: #ccc;
+	border-radius: 50%;
+}
+.about-zhe>div:hover{
+	background: #2E8DED;
+}
+/*关于我们遮罩结束*/

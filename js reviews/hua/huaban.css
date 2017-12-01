@@ -1,0 +1,135 @@
+/*
+* @Author: acer
+* @Date:   2017-10-10 11:06:16
+* @Last Modified by:   acer
+* @Last Modified time: 2017-10-12 10:54:43
+*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+body,html{
+	width: 100%;
+	height: 100%;
+}
+.top{
+	width: 100%;
+	height: 160px;
+	background: #F5F6F7;
+	padding: 20px 10px;
+	box-sizing: border-box;
+}
+.bottom{
+	width: 100%;
+	height: calc(100% - 200px);
+	/* background: blue; */
+	position: relative;
+}
+.neng{
+	width: 190px;
+	height: 100%;
+	float: left;
+	border-right: 1px solid #DBDCDD;
+}
+.neng>li{
+	float: left;
+	margin-right: 10px;
+}
+.neng>li>button,.neng>li>a>button{
+    width: 50px;
+    height: 30px;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #cacaca;
+    display: block;
+    color: #fff;
+}
+.neng>div,.color-zi{
+	font-size: 14px;
+	color: #929292;
+	float: left;
+	margin-top: 73px;
+	margin-left: -29px;
+}
+.tools{
+	width: 425px;
+	height:100%;
+	border-right: 1px solid #DBDCDD;
+	float: left;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.tools1>li,.tools2>li,.stroke,.fill{
+	width: 40px;
+	height: 40px;
+	/* border: 1px solid #106e84; */
+	float: left;
+	margin-right: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    background: #cacaca;
+}
+.tools1{
+	width: 260px;
+	height: 100%;
+	float: left;
+	border-right: 1px solid #dbdcdd;
+}
+.tools2{
+	width: 130px;
+	height: 100%;
+	float: left;
+	margin-left: 20px;
+}
+.color>li,.color>input{
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.bottom>canvas{
+	border: 1px solid lightblue;
+}
+.opacity{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.color{
+	width: 135px;
+	height: 100%;
+	border-right: 1px solid #DBDCDD;
+	float: left;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.eraser-box{
+	width: 50px;
+	height: 50px;
+	background: blue;
+	/* border: 1px solid #000; */
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;	
+}
+.clip-box{
+	width: 50px;
+	height: 50px;
+	border: 1px dashed #ff6700;
+	display: none;
+	position:absolute;
+	top: 0;
+	left: 0;
+	cursor: move;
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>poke</title>
+	<script src='js/jquery-3.2.1.js'></script>
+	<style>
+	  *{
+	  	margin: 0;
+	  	padding: 0;
+	  	list-style: none;
+	  }
+	  html,body{
+	  	width: 100%;
+	  	height: 100%;
+	  	overflow: hidden;
+	  }
+	  body{
+	  	position: relative;
+	  	background:url('img/bg.jpg') no-repeat center/cover;
+	  	/* background: #141414; */
+	  }
+	  .zhuozi{
+	  	width: 700px;
+	  	height: 600px;
+	  	/* background: red; */
+	  	position: absolute;
+	  	top: calc(50% - 300px);
+	  	left: calc(50% - 350px);
+	  }
+	  .pai{
+	  	width: 90px;
+	  	height: 130px;
+	  	background: green;
+	  	position: absolute;
+	  	top: 0;
+	  	left: 305px;
+	  	background-position: center;
+	  	background-size: 100%;
+	  	opacity: 1;
+	  	/* transition: all 0.3s; */
+	  }
+	  .active{
+	  	box-shadow: 0 0 0 4px #48AFD6;
+	  }
+	  .btnL,.btnR{
+	  	width: 100px;
+	  	height: 30px;
+	  	background: #108e64;
+	  	text-align: center;
+	  	line-height: 30px;
+	  	position: absolute;
+	  	bottom:100px;
+	  	left: 307px;
+	  	color: #fff;
+	  	text-align: center;
+	  	line-height: 30px;
+	  	font-size: 14px;
+	  }
+	  .zhuozi>.btnR{
+	  	bottom: 36px;
+	  }
+      
+	</style>
+</head>
+<body>
+	<div class='zhuozi'>
+		<div class='btnL'>右翻</div>
+		<div class='btnR'>左翻</div>
+	</div>
+</body>
+</html>
+<script>
+	$(function(){
+		let poke=[];
+		let flag={};///去重
+		let color=['c','d','h','s'];//花色
+		for(let i=0;i<52;i++){			
+			let hua=color[Math.floor(Math.random()*color.length)];//取color里面的花色0-4
+			let num=Math.floor(Math.random()*13+1);
+			// console.log(`${hua}_${num}`)
+			while(flag[`${hua}_${num}`]){	
+				hua=color[Math.floor(Math.random()*color.length)];//取color里面的花色0-4
+			    num=Math.floor(Math.random()*13+1);
+			}   			        
+			poke.push({hua,num});
+			// flag.hua_num=true;
+			flag[`${hua}_${num}`]=true;
+			// console.log(flag)
+			 
+		}
+		// console.log(poke)
+
+		////////////发牌
+		let zhuozi=$('.zhuozi');
+		let index=0;
+	    for(let i=0;i<7;i++){
+	    	for(let j=0;j<=i;j++){
+	    		let left=305-50*i+100*j,
+	    		    top=50*i;
+	    		// console.log(i)
+	    		$('<div>').appendTo(zhuozi).addClass('pai')
+	    		.css({backgroundImage:`url(img/${poke[index]['num']}${poke[index]['hua']}.jpg)`})
+	    		.animate({left,top})//动画
+	    		.attr('id',`${i}_${j}`)///压住的不会抬起
+	    		.attr('num',poke[index].num);//记录扑克上面的数字
+	    		index++;
+	    	}
+	    }
+        /////发剩下的牌
+	    for(;index<poke.length;index++){
+	    	let left=0,
+	    		top=450;
+	    		$('<div>').appendTo(zhuozi).addClass('pai left')
+	    		.css({backgroundImage:`url(img/${poke[index]['num']}${poke[index]['hua']}.jpg)`})
+	    		.animate({left,top})
+	    		.attr('id',`${-2}_${-2}`)
+	    		.attr('num',poke[index].num);
+	    }
+
+	    
+	    let first=null;//记录点击第一个的对象
+	    zhuozi.on('click','.pai',function(e){//事件委派
+	    	let element=e.target;	    	
+	    	//////压住的不能抬起
+	    	let ele1=`${$(element).attr('id').split('_')[0]*1+1}_${$(element).attr('id').split('_')[1]*1}`
+	    	let ele2=`${$(element).attr('id').split('_')[0]*1+1}_${$(element).attr('id').split('_')[1]*1+1}`
+	    	if($(`#${ele1}`).length||$(`#${ele2}`).length){
+	    		return;
+	    	}
+            //////选中的会被抬起
+            $(element).toggleClass('active');
+	    	if($(element).hasClass('active')){
+	    		$(this).animate({top:'-=20'})
+	    	}else{
+	    		$(this).animate({top:'+=20'})
+	    	}
+
+	    	//////判断第一次的和第二次的数字加起来是14
+	    	if(!first){
+	    		first=element;
+	    	}else{
+	    		if($(first).attr('num')*1+$(element).attr('num')*1==14){
+	    			$(first).animate({top:0,left:600,opacity:0},function(){
+	    				$(this).remove();
+	    			});//动画完成之后，删掉,删除比动画之后的动作快
+	    			$(element).animate({top:0,left:600,opacity:0},function(){
+	    				$(this).remove();
+	    			});
+	    		}else{
+	    			$('.active').animate({top:'+=20'},function(){
+	    				$(this).removeClass('active');
+	    			})
+	    			                 
+	    		}	
+	    		first=null;    		
+	    	}
+	    	
+	    })
+
+	    ///////////////点击按钮移动
+	    let i=0
+	    $('.btnL').on('click',function(){	        	    	
+	    	$('.left').last().animate({top:450,left:600}).removeClass('left').addClass('right')
+	    	.css({'z-index':i});
+	    	i++;    	
+	    })
+	    
+	    $('.btnR').on('click',function(){	        	    	
+	    	$('.right').first().animate({top:450,left:0}).removeClass('right').addClass('left')
+	    	.css({'z-index':i});
+	    	i++;	    	
+	    })
+	    
+
+	})
+</script>

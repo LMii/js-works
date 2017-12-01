@@ -1,0 +1,158 @@
+@charset "utf-8";
+@mixin center{///水平方向居中
+	margin-left:auto;
+	margin-right:auto;
+}
+@mixin centers{//水平垂直居中
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+}
+@mixin centerx($w,$h){//有宽高的水平垂直居中
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-$w/2;
+	margin-top:-$h/2;
+}
+@mixin circle{//圆
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+}
+@mixin borderR($r){//圆角
+	border-radius:$r;
+	-webkit-border-radius:$r;
+	-moz-border-radius:$r;
+}
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+body,html{
+	width:100%;
+	height:100%;
+}
+body{
+	overflow:hidden;
+	background:#141414;
+}
+$width:600px;
+$height:600px;
+.qipan{
+	width:$width;
+	height:$height;
+	background: #d09c00;
+	@include centers;
+	>.qizi{
+		width:$width/15-10;
+		height:$height/15-10;
+		float:left;
+		margin:5px;
+		@include circle;
+	}
+	.hei{
+		background:#000;
+	}
+	.bai{
+		background:#fff;
+		z-index:666;
+		position:relative;
+	}
+	>.hang{
+		width:($width)-$width/15;
+		height:1px;
+		position:absolute;
+		left:20px;
+		background: #000;
+
+		@for $i from 0 through 14{
+			&:nth-of-type(#{$i+1}){
+				top:$width/15*($i)+20;
+				animation:xia .5s ease $i*0.1s forwards;
+			}
+		}
+	}
+	>.lie{
+		width:1px;
+		height:($width)-$width/15;
+		position:absolute;
+		top:20px;
+		background:#000;
+		@for $i from 0 through 14{
+			&:nth-of-type(#{$i+1}){
+				left:$width/15*($i)+20;
+				animation:chuxian .5s ease $i*0.1s forwards;
+			}
+		}
+	}
+	>.dian{
+		width:8px;
+		height:8px;
+		@include circle;
+		background:#000;
+		position: absolute;
+		animation:diaoluo 1s ease forwards;
+		@for $i from 1 through 5{
+			&:nth-of-type(#{$i}){
+				animation-delay:$i*0.2s;
+			}
+		}
+		&:nth-of-type(1){
+			left:3.5*$width/15;
+			top: 3.5*$width/15;
+		}
+		&:nth-of-type(2){
+			left:11.5*$width/15;
+			top:3.5*$width/15;
+		}
+		&:nth-of-type(3){
+			left:7.5*$width/15;
+			top:7.5*$width/15;
+		}
+		&:nth-of-type(4){
+			left:3.5*$width/15;
+			top:11.5*$width/15;
+		}
+		&:nth-of-type(5){
+			left:11.5*$width/15;
+			top:11.5*$width/15;
+		}
+	}
+
+    @keyframes xia {
+		0%{
+			transform:translate3d(0,20px,0);
+			opacity: 0;
+		}
+		100%{
+			transform:translate3d(0,0,0);
+			opacity: 1;
+		}
+	}
+	@keyframes chuxian {
+		0%{
+			transform:translate3d(20px,0,0);
+			opacity: 0;
+		}
+		100%{
+			transform:translate3d(0,0,0);
+			opacity: 1;
+		}
+	}
+	@keyframes diaoluo{
+		0%{
+			transform:translate3d(0,-800px,0);
+			opacity:0;
+		}
+		100%{
+			transform:translate3d(-50%,-50%,0);
+			opacity:1;
+		}
+	}
+}
+

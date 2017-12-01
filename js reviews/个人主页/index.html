@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人主页</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href='iconfont/iconfont.css'>
+	<link rel="stylesheet" href="css/swiper.css">
+	<script src="js/swiper.js"></script>
+</head>
+<body>
+<!-- 头部开始 -->
+	<header>
+		<img src="img/toux1.jpg" alt="">
+		<div class="ming">赵孟茹</div>
+	</header>
+<!-- 头部结束 -->
+<!-- 主要内容开始 -->
+<main>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" style="height:150px;margin-top:35px">
+				<a href="../she/sanke.html" target="_blank"><img src="img/she.jpg" alt=""></a>
+			</div>
+			<div class="swiper-slide" style="height:150px;margin-top:35px">
+				<a href="../dazi/game.html" target="_blank"><img src="img/dazi.jpg" alt=""></a>
+			</div>
+			<div class="swiper-slide" style="height:150px;margin-top:35px">
+				<a href="../puke/poke.html" target="_blank"><img src="img/puke.jpg" alt=""></a>
+			</div>
+			<div class="swiper-slide" style="height:150px;margin-top:35px">
+				<a href="../hua/huaban.html" target="_blank"><img src="img/hua.jpg" alt=""></a>
+			</div>
+			<div class="swiper-slide" style="height:150px;margin-top:35px">
+				<a href="../qi/index.html" target="_blank"><img src="img/qi.jpg" alt=""></a>
+			</div>
+			<div class="swiper-slide" style="height:150px;margin-top:35px">
+				<a href="../res/index.html" target="_blank"><img src="img/can.jpg" alt=""></a>
+			</div>
+			<div class="swiper-slide">Slide 7</div>
+			<div class="swiper-slide">Slide 8</div>
+			<div class="swiper-slide">Slide 9</div>
+			<div class="swiper-slide">Slide 10</div>
+		</div>
+		<div class="swiper-pagination"></div>
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+	</div>
+
+</main>
+<!-- 主要内容结束 -->
+<!-- 左边内容开始 -->
+<!-- 左边内容结束 -->
+</body>
+</html>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
